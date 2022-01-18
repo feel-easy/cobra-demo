@@ -78,8 +78,9 @@ func init() {
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	dateCmd.PersistentFlags().IntVarP(&year, "year", "y", 0, "year to show (should in [1000, 9999]")
-	dateCmd.PersistentFlags().IntVarP(&month, "month", "m", 0, "month to show (should in [1, 12]")
+	_time := time.Now()
+	dateCmd.PersistentFlags().IntVarP(&year, "year", "y", _time.Year(), "year to show (should in [1000, 9999]")
+	dateCmd.PersistentFlags().IntVarP(&month, "month", "m", int(_time.Month()), "month to show (should in [1, 12]")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
