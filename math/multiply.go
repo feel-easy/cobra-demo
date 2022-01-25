@@ -1,4 +1,4 @@
-package cmd
+package math
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var multiplyCmd = &cobra.Command{
+var MultiplyCmd = &cobra.Command{
 	Use:   "multiply",
 	Short: "Multiply subcommand multiply all passed args.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -18,5 +18,5 @@ var multiplyCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(multiplyCmd)
+	// cmd.MainCmd.AddCommand(multiplyCmd)
 }

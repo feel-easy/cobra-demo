@@ -1,4 +1,4 @@
-package cmd
+package math
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 
 var ()
 
-var addCmd = &cobra.Command{
+var AddCmd = &cobra.Command{
 	Use:   "add",
 	Short: "Add subcommand add all passed args.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -20,6 +20,7 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(addCmd)
-	addCmd.Flags().BoolP("hehe", "t", false, "这就是一个flag")
+	// cmd.MainCmd.AddCommand(addCmd)
+	// math.MathCmd.AddCommand(addCmd)
+	AddCmd.Flags().BoolP("hehe", "t", false, "这就是一个flag")
 }

@@ -1,4 +1,4 @@
-package cmd
+package math
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ var (
 	dividedByZeroHanding int // 除 0 如何处理
 )
 
-var divideCmd = &cobra.Command{
+var DivideCmd = &cobra.Command{
 	Use:   "divide",
 	Short: "Divide subcommand divide all passed args.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -22,7 +22,5 @@ var divideCmd = &cobra.Command{
 }
 
 func init() {
-	divideCmd.Flags().IntVarP(&dividedByZeroHanding, "divide_by_zero", "d", int(PanicOnDividedByZero), "do what when divided by zero")
-
-	rootCmd.AddCommand(divideCmd)
+	DivideCmd.Flags().IntVarP(&dividedByZeroHanding, "divide_by_zero", "d", int(PanicOnDividedByZero), "do what when divided by zero")
 }

@@ -1,4 +1,4 @@
-package cmd
+package math
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var minusCmd = &cobra.Command{
+var MinusCmd = &cobra.Command{
 	Use:   "minus",
 	Short: "Minus subcommand minus all passed args.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -18,5 +18,5 @@ var minusCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(minusCmd)
+	// cmd.MainCmd.AddCommand(MinusCmd)
 }

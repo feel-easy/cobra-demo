@@ -1,4 +1,4 @@
-package cmd
+package math
 
 import (
 	"errors"
@@ -7,6 +7,29 @@ import (
 	"strconv"
 
 	"github.com/spf13/cobra"
+)
+
+var (
+	parseHandling int
+)
+
+type OpType int
+
+const (
+	ADD      OpType = 1
+	MINUS    OpType = 2
+	MULTIPLY OpType = 3
+	DIVIDE   OpType = 4
+)
+
+type ErrorHandling int
+
+const (
+	ContinueOnParseError  ErrorHandling = 1 // 解析错误尝试继续处理
+	ExitOnParseError      ErrorHandling = 2 // 解析错误程序停止
+	PanicOnParseError     ErrorHandling = 3 // 解析错误 panic
+	ReturnOnDividedByZero ErrorHandling = 4 // 除0返回
+	PanicOnDividedByZero  ErrorHandling = 5 // 除0 painc
 )
 
 func calc(values []float64, opType OpType) float64 {
