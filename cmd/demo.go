@@ -51,8 +51,17 @@ var classCmd = &cobra.Command{
 		demo.ClassDemo()
 	},
 }
+var sliceCmd = &cobra.Command{
+	Use:   "slice",
+	Short: "",
+	Long:  ``,
+	Run: func(cmd *cobra.Command, args []string) {
+		demo.SliceDemo()
+	},
+}
 
 func init() {
+	demoCmd.AddCommand(sliceCmd)
 	demoCmd.AddCommand(mapCmd)
 	demoCmd.AddCommand(arrayCmd)
 	demoCmd.AddCommand(classCmd)
