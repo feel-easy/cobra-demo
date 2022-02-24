@@ -43,9 +43,19 @@ var mapCmd = &cobra.Command{
 	},
 }
 
+var classCmd = &cobra.Command{
+	Use:   "class",
+	Short: "",
+	Long:  ``,
+	Run: func(cmd *cobra.Command, args []string) {
+		demo.ClassDemo()
+	},
+}
+
 func init() {
 	demoCmd.AddCommand(mapCmd)
 	demoCmd.AddCommand(arrayCmd)
+	demoCmd.AddCommand(classCmd)
 	rootCmd.AddCommand(demoCmd)
 
 	// Here you will define your flags and configuration settings.
