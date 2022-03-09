@@ -60,11 +60,21 @@ var sliceCmd = &cobra.Command{
 	},
 }
 
+var strCmd = &cobra.Command{
+	Use:   "str",
+	Short: "",
+	Long:  ``,
+	Run: func(cmd *cobra.Command, args []string) {
+		demo.StringDemo()
+	},
+}
+
 func init() {
 	demoCmd.AddCommand(sliceCmd)
 	demoCmd.AddCommand(mapCmd)
 	demoCmd.AddCommand(arrayCmd)
 	demoCmd.AddCommand(classCmd)
+	demoCmd.AddCommand(strCmd)
 	rootCmd.AddCommand(demoCmd)
 
 	// Here you will define your flags and configuration settings.
