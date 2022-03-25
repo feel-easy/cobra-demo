@@ -1,20 +1,27 @@
 package demo
 
-func maxOfStr(str string) int {
+import "fmt"
+
+func maxOfStr(str string) (int, string) {
 	lastAc := make(map[rune]int)
 	maxLen := 0
 	start := 0
-	for i, ch := range []rune(str) {
+	maxStr := ""
+	runeStr := []rune(str)
+	for i, ch := range runeStr {
 		if lastI, ok := lastAc[ch]; ok && lastI >= start {
 			start = lastAc[ch] + 1
 		}
 		if i-start+1 > maxLen {
 			maxLen = i - start + 1
+			maxStr = string(runeStr[start : i+1])
 		}
 	}
-	return maxLen
+	return maxLen, maxStr
 }
 
 func StringDemo() {
-	maxOfStr("你好呀好呀")
+	fmt.Println(maxOfStr("hello"))
+	h := make([]int, 10, 12)
+	fmt.Println(h)
 }
